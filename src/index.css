@@ -1,8 +1,8 @@
+@import url('https://fonts.googleapis.com/css2?family=IBM+Plex+Sans+Arabic:wght@300;400;500;600;700&display=swap');
+
 body {
   margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
+  font-family: "IBM Plex Sans Arabic", sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
@@ -10,4 +10,182 @@ body {
 code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
+}
+
+.app {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.app h3 {
+  text-align: center;
+  font-family: "IBM Plex Sans Arabic", sans-serif;
+  font-size: 3rem;
+  font-weight: 700;
+  margin-top: 2rem;
+  margin-bottom: 0;
+}
+
+.app p {
+  text-align: center;
+  font-family: "IBM Plex Sans Arabic", sans-serif;
+  font-size: 1rem;
+  font-weight: 500;
+  margin-top: 0;
+  margin-bottom: 2rem;
+}
+
+.app .click-me {
+  padding: 0.5rem 1.5rem;
+  background-color: #2970FF;
+  color: #ffffff;
+  border-radius: 6px;
+  font-family: "IBM Plex Sans Arabic", sans-serif;
+  font-size: 1rem;
+  font-weight: 500;
+  outline: none;
+  border: none;
+  cursor: pointer;
+  transition: all 0.3s ease-in-out;
+}
+
+.app .click-me:hover {
+  background-color: #0242c1;
+}
+
+.toast {
+  position: fixed;
+  width: 400px;
+  padding: 1rem;
+  border-radius: 8px;
+  display: flex;
+  flex-direction: row;
+  align-items: flex-start;
+  background-color: #2970FF;
+  gap: 1rem;
+}
+
+.toast .content {
+  display: flex;
+  flex-direction: column;
+  gap: 0.4rem;
+}
+
+.toast .content .title {
+  font-family: "IBM Plex Sans Arabic", sans-serif;
+  font-size: 14px;
+  font-weight: 700;
+  line-height: 20px;
+  color: #FFFFFF;
+  margin: 0;
+}
+
+.toast .content .message {
+  font-family: "IBM Plex Sans Arabic", sans-serif;
+  font-size: 14px;
+  font-weight: 400;
+  line-height: 20px;
+  color: #FFFFFF;
+  margin: 0;
+  text-align: start;
+}
+
+.toast .content .buttons {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: 0.5rem;
+  margin-top: 0.4rem;
+}
+
+.toast .content .buttons button {
+  width: 60px;
+  padding: 0.2rem 0.5rem;
+  font-family: "IBM Plex Sans Arabic", sans-serif;
+  font-size: 14px;
+  font-weight: 500;
+  line-height: 20px;
+  border: none;
+  outline: none;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: all 0.3s ease-in-out;
+}
+
+.toast .content .buttons .btn-with-primary {
+  background-color: #FFFFFF;
+  border: 1px solid #FFFFFF;
+  color: #000000;
+}
+
+.toast .content .buttons .btn-with-primary:hover {
+  background-color: #efefef;
+}
+
+.toast .content .buttons .btn-with-secondary {
+  background-color: #000000;
+  border: 1px solid #000000;
+  color: #FFFFFF;
+}
+
+.toast .content .buttons .btn-with-secondary:hover {
+  background-color: #373737;
+}
+
+.toast .content .buttons .btn-with-outline {
+  background-color: transparent;
+  color: #FFFFFF;
+}
+
+.toast .content .buttons .btn-with-outline:hover {
+  border: 1px solid #FFFFFF;
+}
+
+.toast.toast-top-right {
+  top: 10px;
+  right: 20px;
+}
+
+.toast.toast-top-center {
+  top: 10px;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+.toast.toast-top-left {
+  top: 10px;
+  left: 20px;
+}
+
+.toast.toast-bottom-right {
+  bottom: 15px;
+  right: 20px;
+}
+
+.toast.toast-bottom-center {
+  bottom: 15px;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+.toast.toast-bottom-left {
+  bottom: 15px;
+  left: 20px;
+}
+
+.toast.toast-center-right {
+  top: 50%;
+  transform: translateY(-50%);
+  right: 20px;
+}
+
+.toast.toast-center-left {
+  top: 50%;
+  transform: translateY(-50%);
+  left: 20px;
 }

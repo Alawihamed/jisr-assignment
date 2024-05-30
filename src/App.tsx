@@ -1,24 +1,34 @@
-import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import { useEffect, useState } from 'react';
+import Toast from './components/Toast/Toast';
 
 function App() {
+  const [openToast, setOpenToast] = useState<boolean>(false);
+
+  useEffect(() => {
+    const timeId = setTimeout(() => {
+      setOpenToast(false);
+    }, 5000);
+
+    return () => {
+      clearTimeout(timeId);
+    }
+  }, [openToast, setOpenToast]);
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div className="app">
+      <h3>Toast</h3>
+      <p>Notification message or a piece of information displayed above the page content.</p>
+      <button className='click-me' onClick={() => setOpenToast(true)}>click me</button>
+      {openToast && (
+        <Toast
+          title='Toast title'
+          message='Long details go here after the title, long details go here after the title'
+          postion="top-right"
+          onConfirm={() => console.log('Confirm')}
+          onCancel={() => setOpenToast(false)}
+        />
+      )
+      }
     </div>
   );
 }
