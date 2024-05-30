@@ -19,16 +19,14 @@ function App() {
       <h3>Toast</h3>
       <p>Notification message or a piece of information displayed above the page content.</p>
       <button className='click-me' onClick={() => setOpenToast(true)}>click me</button>
-      {openToast && (
-        <Toast
-          title='Toast title'
-          message='Long details go here after the title, long details go here after the title'
-          postion="top-right"
-          onConfirm={() => console.log('Confirm')}
-          onCancel={() => setOpenToast(false)}
-        />
-      )
-      }
+      <Toast
+        open={openToast}
+        title='Toast title'
+        message='Long details go here after the title, long details go here after the title'
+        postion="top-right"
+        onConfirm={() => console.log('Confirm')}
+        onCancel={() => setOpenToast(false)}
+      />
     </div>
   );
 }
